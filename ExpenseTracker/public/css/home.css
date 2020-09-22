@@ -30,6 +30,22 @@
     border-top: none;
 }
 
+.ExpenseRow{
+
+}
+
+.Name{
+
+}
+
+.Cost{
+
+}
+
+.Category{
+    
+}
+
 /* Mobile/Tablet Screens */
 @media only screen and (max-width: 1000px) {
     .FormContainer{
