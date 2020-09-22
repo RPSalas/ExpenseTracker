@@ -1,6 +1,55 @@
+.FormContainer{
+    padding: 1%;
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0.5%;
+}
 
+.Search{
+    text-align: center;
+    height: 20px;
+    width: 72%;
+}
+
+.SearchList{
+    width: 13%;
+}
+
+.AddExpense {
+    width: 13%;
+}
+
+.EForm{
+    width: 50%;
+    padding-top: 1%;
+    margin: 0 auto;
+    border-radius: 0.5%;
+    border: 2px solid black;
+    border-top: none;
+}
 
 /* Mobile/Tablet Screens */
 @media only screen and (max-width: 1000px) {
+    .FormContainer{
+        width: 100%;
+        border: none;
+    }
 
+    .EForm{
+        border: none;
+    }
+
+    .Search{
+        width: 79%;
+    }
+
+    .SearchList{
+        width: 9%;
+    }
+    
+    .AddExpense {
+        width: 10%;
+    }
 }
