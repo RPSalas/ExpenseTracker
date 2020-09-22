@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    height: 75px;
+    background-color: black;
+}
+
+#title{
+    margin: 0 auto;
+    width: 45%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.titleFName{
+    width: 50%;
+    margin-top: 12px;
+    color:#fff2e6;
+    font-weight: bold;
+    font-size: 40px;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.titleLName{
+    width: 50%;
+    margin-top: 12px;
+    color:#fff2e6;
+    font-weight: bold;
+    font-size: 40px;
+    float: right;
+}
+
+@media only screen and (max-width: 1000px) {
+    .titleFName{
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .titleLName{
+        margin-top: 20px;
+        font-size: 30px;
+    }
+}

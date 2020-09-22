@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icon/favicon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- CSS Files for Each Page -->
+    {{#if homeCSS}}
+    <link href='/css/home.css' rel='stylesheet' />
+    {{/if}}
+    {{#if projectsCSS}}
+    <link href='/css/projects.css' rel='stylesheet' />
+    {{/if}}
+    {{#if experienceCSS}}
+    <link href='/css/experience.css' rel='stylesheet' />
+    {{/if}}
+    {{#if extraCSS}}
+    <link href='/css/extra.css' rel='stylesheet' />
+    {{/if}}
+    <title>{{ pageTitle }}</title>
+</head>
+
+<body>
+    {{{body}}}
+</body>
+
+</html>
