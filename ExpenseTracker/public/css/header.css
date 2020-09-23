@@ -34,11 +34,11 @@ nav{
 @media only screen and (max-width: 1000px) {
     .expenseTitle{
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 25px;
     }
 
     .trackerTitle{
         margin-top: 20px;
-        font-size: 30px;
+        font-size: 25px;
     }
 }
