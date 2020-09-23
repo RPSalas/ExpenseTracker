@@ -5,7 +5,8 @@
     height: 40px;
     width: 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: rgb(82, 82, 82);
+    border-top: 2px solid black;
     text-align: center;
 }
 

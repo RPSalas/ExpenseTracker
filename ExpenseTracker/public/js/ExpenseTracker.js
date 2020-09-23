@@ -1,3 +1,4 @@
+//function for showing the form to add expense
 function showForm() {
     var showf = document.getElementById("ExpenseForm");
     if (showf.style.display === "none") {
@@ -7,19 +8,10 @@ function showForm() {
     }
 }
 
-function DeleteItem(elem) {
-    elem.parentNode.parentNode.removeChild(elem.parentNode);
-
-    var myStrorage = window.localStorage;
-    var expenseArray = JSON.parse(myStrorage.getItem("expenses"));
-    for (let i = 0; i < expenseArray.length; i++) {
-        expenseArray.splice(i, 1);
-    }
-    myStrorage.setItem("expenses", JSON.stringify(expenseArray));
-}
-
+//function to add an expense to the list
 function AddList(){
     var table = document.getElementById("ExpenseTable");
+    var tableBody = document.getElementById("TableBody");
     
     var inputs = document.getElementsByTagName("input");
     var name = inputs[1].value;
@@ -34,8 +26,6 @@ function AddList(){
 
     var myStorage = window.localStorage;
     var expenseArray = JSON.parse(myStorage.getItem("expenses"));
-
-    console.log(expense);
 
     expenseArray.push(expense);
 
@@ -63,7 +53,7 @@ function AddList(){
     var expenseCategory = document.createTextNode(category);
 
     var deleteButton = document.createElement("button");
-    deleteButton.textContent = "DELETE";
+    deleteButton.textContent = "Delete";
     deleteButton.setAttribute("id", "DeleteFromList");
     deleteButton.setAttribute("onclick", "DeleteItem(this)");
 
@@ -77,7 +67,9 @@ function AddList(){
     expenseDataCategory.appendChild(expenseCategory);
     expenseDataButton.appendChild(deleteButton);
 
-    table.appendChild(expenseRow);
+    tableBody.appendChild(expenseRow);
+
+    table.appendChild(tableBody);
 
     var showf = document.getElementById("ExpenseForm");
     var nameInput = document.getElementById("name");
@@ -90,11 +82,13 @@ function AddList(){
 
 }
 
+//when window refreshes this is how you load items existing in local storage
 document.addEventListener("DOMContentLoaded", function(){
     var myStorage = window.localStorage;
 
     if(myStorage.getItem("expenses")){
       var table = document.getElementById("ExpenseTable");
+      var tableBody = document.getElementById("TableBody");
       var objectArray = JSON.parse(myStorage.getItem("expenses"));
 
       for (let i = 0; i < objectArray.length; i++) {
@@ -120,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(){
         var expenseCategory = document.createTextNode(objectArray[i].category);
 
         var deleteButton = document.createElement("button");
-        deleteButton.textContent = "DELETE";
+        deleteButton.textContent = "Delete";
         deleteButton.setAttribute("id", "DeleteFromList");
         deleteButton.setAttribute("onclick", "DeleteItem(this)");
 
@@ -134,7 +128,9 @@ document.addEventListener("DOMContentLoaded", function(){
         expenseDataCategory.appendChild(expenseCategory);
         expenseDataButton.appendChild(deleteButton);
 
-        table.appendChild(expenseRow);
+        tableBody.appendChild(expenseRow)
+
+        table.appendChild(tableBody);
   
         var showf = document.getElementById("ExpenseForm");
         showf.style.display = "none";
@@ -146,6 +142,28 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 
+//function to delete an item from the expenses list
+function DeleteItem(elem) {
+    var myStorage = window.localStorage;
+
+    var i = elem.parentNode.parentNode.rowIndex; 
+
+    document.getElementById("ExpenseTable").deleteRow(i);
+    elem.parentNode.parentNode.removeChild(elem.parentNode);
+
+    var expenseArray = JSON.parse(myStorage.getItem("expenses"));
+
+    for (let j = 0; j < expenseArray.length; j++) {
+        console.log(expenseArray[j]);
+        if(j == i - 1){
+            expenseArray.splice(j, 1);
+        }
+    }
+
+    myStorage.setItem("expenses", JSON.stringify(expenseArray));
+}
+
+//search function by expense name
 function search(){
     var searchedExpense = document.getElementById("Searched");
     var expenseTableData = document.getElementsByClassName("ExpenseDataName");
