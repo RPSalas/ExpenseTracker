@@ -31,7 +31,7 @@ Once you have entered the "localhost:xxxx" url in your browser, the webpage will
 
         a. Expense Name
         b. Expense Cost
-        c. Expence Category
+        c. Expense Category
 
     Once done, press the "Submit" button to enter the new expense or press the "Add Expense" button again to hide the form.
 
